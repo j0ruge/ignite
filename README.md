@@ -14,6 +14,8 @@
 
 **DELETE** ⇒ Deletar uma informação no servidor.
 
+---
+
 ## [Tipos de parâmetros](https://app.rocketseat.com.br/node/chapter-i-2/group/configurando-o-projeto/lesson/tipos-de-parametros-1)
 
 **Route Params** ⇒ Identificar um recurso para editar/deletar/buscar um recurso.
