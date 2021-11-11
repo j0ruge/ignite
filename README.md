@@ -4,7 +4,7 @@
 
 ## [Utilizando os métodos HTTP](https://app.rocketseat.com.br/node/chapter-i-2/group/configurando-o-projeto/lesson/utilizando-os-metodos-http)
 
-**GET** ⇒ Buscar uma informação dentro do servidor
+**`GET`** ⇒ Buscar uma informação dentro do servidor
 
 **POST** ⇒ Inserir uma informação no servidor
 
