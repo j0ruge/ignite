@@ -4,7 +4,7 @@ const app = express();
 
 
 app.get("/", (request, response) => {
-  console.log({message: "Hello World"});
+  console.log({message: "Hello World"});  
 })
 
 app.listen(3333, () => console.log("Server is running!"));
