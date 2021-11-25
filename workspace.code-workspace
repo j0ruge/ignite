@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "..\\DevOps"
+		},
+		{
+			"path": "..\\GOSTACK"
 		}
 	],
 	"settings": {}
