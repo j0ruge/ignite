@@ -1,0 +1,9 @@
+*/node_modules/
+IGNITE_CHALLENGES/*/node_modules
+public/dist/
+.env.development
+.env.test
+temp/
+tmp/*
+!tmp/.gitkeep
+build/
