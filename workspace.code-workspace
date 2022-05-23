@@ -7,5 +7,7 @@
 			"path": "..\\IGNITE_CHALLENGES"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ignite"
+	}
 }

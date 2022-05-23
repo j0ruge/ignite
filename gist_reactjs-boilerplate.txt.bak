@@ -1,0 +1,50 @@
+* Fazer download e salvar na pasta de tua preferência.
+* Abrir com o visualizador do sistema
+
+
+
+
+vi o video do refresh até aqui
+
+https://youtu.be/RaweREhpBX8?t=4052
+
+
+o AsyncStporage do native e o localStorage no web
+
+
+Ajustar as migrations no banco
+
+
+
+
+
+Declaração, declarao de quantia paga. 
+
+
+
+
+
+# reactjs-boilerplate
+
+Colocar no gist
+
+```bash
+yarn init -y
+yarn add react
+yarn add react-dom
+yarn add @babel/core @babel/cli @babel/preset-env -D
+yarn add @babel/preset-react -D
+mkdir src
+mkdir public
+
+```
+
+criar babel.config.js
+```javascript
+module.exports = {
+  presets: [
+    '@babel/preset-env'
+  ]
+}
+```
+
