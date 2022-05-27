@@ -1,0 +1,42 @@
+section.repository-list {
+  margin: 40px;
+
+  h1 {
+    margin-bottom: 16px;
+  } 
+
+  ul {
+    list-style: none;
+
+    li {
+      /**
+      O & no scss significa o próprio elemento, podemos aqui usar duas abordagens 
+      a de usar a margin 0 no ultimo elemento com:
+        &:last-child{
+          margin: 0;
+        }
+      ou dizendo que quando próximo elemento for uma li , adicinamos margin-top: 20px;
+      *
+      * 
+      */
+
+      & + li {
+        margin-top: 20px;
+      }   
+      
+      p {
+        font-size: 14px;
+        color: #444;
+        margin-top: 8px;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 16px;
+        text-decoration: none;
+        color: #8257e6;
+      }
+
+    }
+  }
+}

@@ -1,1 +1,5 @@
-#Propriedades no React
+# Propriedades no React
+.
+.
+.
+# TypeScript no ReactJS
