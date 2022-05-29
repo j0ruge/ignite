@@ -4,8 +4,14 @@ import '../styles/repositories.scss';
 
 const apiUrl = 'https://api.github.com/orgs/rocketseat/repos'
 
+type Repository = {  
+    name: string;
+    description: string;
+    html_url: string;  
+}
+
 export default function RepositoryList() {
-  const [ repositories, setRepositories ] = useState([]);
+  const [ repositories, setRepositories ] = useState<Repository[]>([]);
 
   useEffect(() => {
     fetch(apiUrl)
