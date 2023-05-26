@@ -1,6 +1,7 @@
 import http from 'node:http';
 import { Transform } from 'node:stream';
 
+
 class InverseNumberStream extends Transform {
     _transform(chunk, encoding, callback) {
         const number = Number(chunk.toString());
@@ -12,10 +13,22 @@ class InverseNumberStream extends Transform {
     }
 };
 
-const server = http.createServer((request, response) => {
-    return request
-        .pipe(new InverseNumberStream())
-        .pipe(response);
+const server = http.createServer(async (request, response) => {
+    const buffers = [];
+
+    for await (const chunk of request) {
+        buffers.push(chunk);
+    }
+
+    const fullStreamContent = Buffer.concat(buffers).toString();
+
+    console.log(fullStreamContent);
+
+    return response.end(fullStreamContent);
+
+    // return request
+    //     .pipe(new InverseNumberStream())
+    //     .pipe(response);
 
 });
 
