@@ -1,4 +1,5 @@
 import http from 'node:http';
+import { json } from './middlewares/json.js';
 
 
 const users = [];
@@ -8,25 +9,10 @@ const server = http.createServer(async (request, response) => {
 
     console.log(`Request method: ${method} | Request URL: ${url}`);
 
-
-    const buffers = [];
-
-    for await (const chunk of request) {
-        buffers.push(chunk);
-    }
-
-     
-
-    try {
-        request.body = JSON.parse(Buffer.concat(buffers).toString()); 
-    } catch (error) {
-        request.body = null;
-    }
-
+    await json(request, response);
 
     if (method === 'GET' && url === '/users') {
-        return response
-            .setHeader('Content-Type', 'application/json')
+        return response            
             .end(JSON.stringify(users));
     }
 
