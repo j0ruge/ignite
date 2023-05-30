@@ -1,11 +1,79 @@
 _type: export
 __export_format: 4
-__export_date: 2023-05-30T16:52:58.849Z
+__export_date: 2023-05-30T21:08:46.113Z
 __export_source: insomnia.desktop.app:v2023.2.2
 resources:
+  - _id: req_7e6b49e8331a47a0a5d77ea95fa40e0c
+    parentId: fld_b55fde46a0d743f0b94c9483271f92e4
+    modified: 1685480427288
+    created: 1685477519405
+    url: http://localhost:3333/tasks
+    name: List Tasks
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684809062018.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_b55fde46a0d743f0b94c9483271f92e4
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685477506708
+    created: 1685477506708
+    name: Desafio 01
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1685477506708
+    _type: request_group
+  - _id: wrk_9150b04e7c4e4f4b9503656693498d83
+    parentId: null
+    modified: 1685143702090
+    created: 1685143702090
+    name: Ignite Node.js 01
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_96ec9d58c6e246a5ae617b2bb3030d36
+    parentId: fld_b55fde46a0d743f0b94c9483271f92e4
+    modified: 1685480871353
+    created: 1685479718106
+    url: http://localhost:3333/tasks
+    name: Create Task
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"title": "GabirU Perneta",
+        	"description": "gabiru@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1684809061968.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_45c27cf444aa48bc8bccb8b99478cf45
     parentId: wrk_9150b04e7c4e4f4b9503656693498d83
-    modified: 1685458351060
+    modified: 1685470482229
     created: 1685143708171
     url: http://localhost:3333/users
     name: Create User
@@ -15,7 +83,7 @@ resources:
       mimeType: application/json
       text: |-
         {		
-        	"name": "GabirU Felpudo",
+        	"name": "GabirU Perneta",
         	"email": "gabiru@gmail.com"
         }
     parameters: []
@@ -32,17 +100,9 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: wrk_9150b04e7c4e4f4b9503656693498d83
-    parentId: null
-    modified: 1685143702090
-    created: 1685143702090
-    name: Ignite Node.js 01
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_6db5331a965240d68f4feee385309a77
     parentId: wrk_9150b04e7c4e4f4b9503656693498d83
-    modified: 1685143859783
+    modified: 1685470292921
     created: 1685143855723
     url: http://localhost:3333/users
     name: List Users
@@ -53,6 +113,31 @@ resources:
     headers: []
     authentication: {}
     metaSortKey: -1684846244924.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b076de616a9940f9b71b2b2409c9d447
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685472288047
+    created: 1685470310202
+    url: http://localhost:3333/users
+    name: Filter Users
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_52003f48d7c9482eb8240eb679ddb494
+        name: search
+        value: Onírico
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1684771879112.875
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
