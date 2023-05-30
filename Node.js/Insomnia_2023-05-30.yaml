@@ -1,0 +1,139 @@
+_type: export
+__export_format: 4
+__export_date: 2023-05-30T16:52:58.849Z
+__export_source: insomnia.desktop.app:v2023.2.2
+resources:
+  - _id: req_45c27cf444aa48bc8bccb8b99478cf45
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685458351060
+    created: 1685143708171
+    url: http://localhost:3333/users
+    name: Create User
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"name": "GabirU Felpudo",
+        	"email": "gabiru@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1685143708171
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_9150b04e7c4e4f4b9503656693498d83
+    parentId: null
+    modified: 1685143702090
+    created: 1685143702090
+    name: Ignite Node.js 01
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_6db5331a965240d68f4feee385309a77
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685143859783
+    created: 1685143855723
+    url: http://localhost:3333/users
+    name: List Users
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684846244924.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_45636eb69f08449789cb724e8264a567
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685465442400
+    created: 1685454901051
+    url: http://localhost:3333/users/35eba746-3a2b-4b27-bdab-dcd5db7ba74f
+    name: Delete User
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684697513301.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2ea346a973d4427e96584b4f1577dd9b
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685465474117
+    created: 1685464887080
+    url: http://localhost:3333/users/e86e88d7-7dda-4ec9-ac0c-94bbf2f2b894
+    name: Update User
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"name": "GabirU Onírico",
+        	"email": "gabiru@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1684623147489.625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_cc677173210abc391add9b1996c7cfc558cc440f
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685143702095
+    created: 1685143702095
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1685143702095
+    _type: environment
+  - _id: jar_cc677173210abc391add9b1996c7cfc558cc440f
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685143702099
+    created: 1685143702099
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_1f2b6f9c693447738132018bdd9687a0
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685143702091
+    created: 1685143702091
+    fileName: Ignite Node.js 01
+    contents: ""
+    contentType: yaml
+    _type: api_spec
