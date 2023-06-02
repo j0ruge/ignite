@@ -1,7 +1,6 @@
 import {randomUUID} from 'node:crypto';
 import { Database } from '../database/database.js';
 import { buildRoutePath } from '../utils/build-route-path.js'
-import { title } from 'node:process';
 
 const database = new Database();
 
