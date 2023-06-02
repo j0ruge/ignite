@@ -1,6 +1,7 @@
 import {randomUUID} from 'node:crypto';
 import { Database } from '../database/database.js';
 import { buildRoutePath } from '../utils/build-route-path.js'
+import { title } from 'node:process';
 
 const database = new Database();
 
@@ -76,6 +77,40 @@ export const routes = [
             }
             
             database.delete('tasks', id);
+            return response.writeHead(204).end();
+        }
+    },
+    {
+        method: 'PATCH',
+        path: buildRoutePath('/tasks/:id/complete'),
+        handler: (request, response) => {                             
+            const { id } = request.params;
+            
+            const [task] = database.select('tasks', { id });
+            if(!task) {
+                return response.writeHead(404)
+                .end(JSON.stringify({error: 'Task not found'}));
+            }            
+            
+            if(task.completed_at === null) {
+                database.update('tasks', id, {
+                    title: task.title,
+                    description: task.description,
+                    created_at: task.created_at,                
+                    updated_at: new Date(),
+                    completed_at: new Date(),
+                });
+            } 
+            if(task.completed_at !== null) {
+                database.update('tasks', id, {
+                    title: task.title,
+                    description: task.description,
+                    created_at: task.created_at,                
+                    updated_at: new Date(),
+                    completed_at: null,
+                });
+            }
+            
             return response.writeHead(204).end();
         }
     }, 
