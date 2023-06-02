@@ -42,13 +42,13 @@ export class Database { // Creating a class to handle the database
         return data;
     }
 
-    update(table, id, data){
-        const rowIndex = this.#database[table].findIndex(row => row.id === id);
+    update(table, id, data){ // Creating a method to update data in the database
+        const rowIndex = this.#database[table].findIndex(row => row.id === id); // Getting the index of the row with the id
 
-        if(rowIndex > -1){
-            const row = this.#database[table][rowIndex];
-            this.#database[table][rowIndex] = {id, ...row,...data};
-            this.#persist();
+        if(rowIndex > -1){ // If the row exists
+            const row = this.#database[table][rowIndex]; // Getting the row
+            this.#database[table][rowIndex] = {id, ...row,...data}; // Updating the row
+            this.#persist();    
         }
     }
 
