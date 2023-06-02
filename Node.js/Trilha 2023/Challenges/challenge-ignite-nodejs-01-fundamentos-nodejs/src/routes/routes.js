@@ -35,4 +35,48 @@ export const routes = [
             return response.writeHead(201).end();
         }
     },
+    {
+        method: 'PUT',
+        path: buildRoutePath('/tasks/:id'),
+        handler: (request, response) => {                             
+            const { id } = request.params;
+            const { title, description } = request.body;
+            
+            if(!title || !description) {
+                return response.writeHead(400)
+                .end(JSON.stringify({error: 'Title and description are required'}));
+            }
+
+            const [task] = database.select('tasks', { id });
+            if(!task) {
+                return response.writeHead(404)
+                .end(JSON.stringify({error: 'Task not found'}));
+            }
+
+            database.update('tasks', id, {
+                title,
+                description,
+                created_at: task.created_at,                
+                updated_at: new Date(),
+                completed_at: task.completed_at,
+            });
+            return response.writeHead(204).end();
+        }
+    }, 
+    {
+        method: 'DELETE',
+        path: buildRoutePath('/tasks/:id'),
+        handler: (request, response) => {
+            const { id } = request.params;            
+            
+            const [task] = database.select('tasks', { id });
+            if(!task) {
+                return response.writeHead(404)
+                .end(JSON.stringify({error: 'Task not found'}));
+            }
+            
+            database.delete('tasks', id);
+            return response.writeHead(204).end();
+        }
+    }, 
 ]
