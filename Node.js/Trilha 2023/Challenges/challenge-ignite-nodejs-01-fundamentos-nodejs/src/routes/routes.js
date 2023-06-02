@@ -92,25 +92,31 @@ export const routes = [
                 .end(JSON.stringify({error: 'Task not found'}));
             }            
             
-            if(task.completed_at === null) {
-                database.update('tasks', id, {
-                    title: task.title,
-                    description: task.description,
-                    created_at: task.created_at,                
-                    updated_at: new Date(),
-                    completed_at: new Date(),
-                });
-            } 
-            if(task.completed_at !== null) {
-                database.update('tasks', id, {
-                    title: task.title,
-                    description: task.description,
-                    created_at: task.created_at,                
-                    updated_at: new Date(),
-                    completed_at: null,
-                });
-            }
-            
+            const isCompleted = !!task.completed_at;
+
+            const completed_at = isCompleted ? null : new Date();
+
+            database.update('tasks', id, { completed_at, updated_at: new Date() });
+
+            // if(task.completed_at === null) {
+            //     database.update('tasks', id, {
+            //         title: task.title,
+            //         description: task.description,
+            //         created_at: task.created_at,                
+            //         updated_at: new Date(),
+            //         completed_at: new Date(),
+            //     });
+            // } 
+            // if(task.completed_at !== null) {
+            //     database.update('tasks', id, {
+            //         title: task.title,
+            //         description: task.description,
+            //         created_at: task.created_at,                
+            //         updated_at: new Date(),
+            //         completed_at: null,
+            //     });
+            // }
+
             return response.writeHead(204).end();
         }
     }, 
