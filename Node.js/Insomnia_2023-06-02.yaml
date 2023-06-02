@@ -1,0 +1,295 @@
+_type: export
+__export_format: 4
+__export_date: 2023-06-02T20:02:06.986Z
+__export_source: insomnia.desktop.app:v2023.2.2
+resources:
+  - _id: req_7e6b49e8331a47a0a5d77ea95fa40e0c
+    parentId: fld_b55fde46a0d743f0b94c9483271f92e4
+    modified: 1685480427288
+    created: 1685477519405
+    url: http://localhost:3333/tasks
+    name: List Tasks
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684809062018.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_b55fde46a0d743f0b94c9483271f92e4
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685477506708
+    created: 1685477506708
+    name: Desafio 01
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1685477506708
+    _type: request_group
+  - _id: wrk_9150b04e7c4e4f4b9503656693498d83
+    parentId: null
+    modified: 1685143702090
+    created: 1685143702090
+    name: Ignite Node.js 01
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_96ec9d58c6e246a5ae617b2bb3030d36
+    parentId: fld_b55fde46a0d743f0b94c9483271f92e4
+    modified: 1685723509573
+    created: 1685479718106
+    url: http://localhost:3333/tasks
+    name: Create Task
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"title": "GabirU Zarolho",
+        	"description": "Oh dó deste pobre bichinho"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1684809061968.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_80550d6312954462b2fb1f72282fa8e8
+    parentId: fld_b55fde46a0d743f0b94c9483271f92e4
+    modified: 1685735964595
+    created: 1685726603634
+    url: http://localhost:3333/tasks/6676a257-955d-4016-a973-9c33c604c997
+    name: Update Task
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"title": "GabirU Zarolho",
+        	"description": "Oh dó deste pequenino pobre bichano"	
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1684809061918.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_52c45651ca4d455ea0aff627880c8c8f
+    parentId: fld_b55fde46a0d743f0b94c9483271f92e4
+    modified: 1685735798085
+    created: 1685735144550
+    url: http://localhost:3333/tasks/c6aafcc2-d285-45be-b2de-056b2fefa926/complete
+    name: Toggle Complete
+    description: ""
+    method: PATCH
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684809061893.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e6af941c4d4e43929a31f1d7adf67948
+    parentId: fld_b55fde46a0d743f0b94c9483271f92e4
+    modified: 1685735946795
+    created: 1685726720606
+    url: http://localhost:3333/tasks/c6aafcc2-d285-45be-b2de-056b2fefa926
+    name: Delete Task
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684809061868.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_45c27cf444aa48bc8bccb8b99478cf45
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685470482229
+    created: 1685143708171
+    url: http://localhost:3333/users
+    name: Create User
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"name": "GabirU Perneta",
+        	"email": "gabiru@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1685143708171
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6db5331a965240d68f4feee385309a77
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685470292921
+    created: 1685143855723
+    url: http://localhost:3333/users
+    name: List Users
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684846244924.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b076de616a9940f9b71b2b2409c9d447
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685472288047
+    created: 1685470310202
+    url: http://localhost:3333/users
+    name: Filter Users
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_52003f48d7c9482eb8240eb679ddb494
+        name: search
+        value: Onírico
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1684771879112.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_45636eb69f08449789cb724e8264a567
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685465442400
+    created: 1685454901051
+    url: http://localhost:3333/users/35eba746-3a2b-4b27-bdab-dcd5db7ba74f
+    name: Delete User
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684697513301.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2ea346a973d4427e96584b4f1577dd9b
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685465474117
+    created: 1685464887080
+    url: http://localhost:3333/users/e86e88d7-7dda-4ec9-ac0c-94bbf2f2b894
+    name: Update User
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"name": "GabirU Onírico",
+        	"email": "gabiru@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1684623147489.625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_cc677173210abc391add9b1996c7cfc558cc440f
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685143702095
+    created: 1685143702095
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1685143702095
+    _type: environment
+  - _id: jar_cc677173210abc391add9b1996c7cfc558cc440f
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685143702099
+    created: 1685143702099
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_1f2b6f9c693447738132018bdd9687a0
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1685143702091
+    created: 1685143702091
+    fileName: Ignite Node.js 01
+    contents: ""
+    contentType: yaml
+    _type: api_spec

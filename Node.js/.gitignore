@@ -1,5 +1,4 @@
-*/node_modules/
-IGNITE_CHALLENGES/*/node_modules
+node_modules/
 public/dist/
 .env.development
 .env.test
