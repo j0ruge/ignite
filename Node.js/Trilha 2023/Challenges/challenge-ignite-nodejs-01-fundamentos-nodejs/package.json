@@ -8,6 +8,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "csv-parse": "^5.4.0"
+    "csv": "^6.3.1",
+    "csv-generate": "^4.2.6",
+    "csv-parse": "^5.4.0",
+    "csv-parser": "^3.0.0",
+    "sqlite3": "^5.1.6"
   }
 }
