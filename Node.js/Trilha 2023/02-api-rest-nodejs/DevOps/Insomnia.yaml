@@ -1,0 +1,125 @@
+_type: export
+__export_format: 4
+__export_date: 2023-06-14T21:17:53.328Z
+__export_source: insomnia.desktop.app:v2023.2.2
+resources:
+  - _id: req_31684bf0613e4f99aabbcb3e60b12c31
+    parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
+    modified: 1686775497872
+    created: 1686775094705
+    url: "{{ _.baseURL }}/transactions"
+    name: Create transaction
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "Freelancer",
+        	"amount": 8000,
+        	"type": "credit"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686775085577
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_3fe4d523ceb048e5a93d59145a58fead
+    parentId: null
+    modified: 1686775056717
+    created: 1686775056717
+    name: Ignite Node.js API REST -  Transactions
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_c123a13ce10a474bbf401f5c1290e8c1
+    parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
+    modified: 1686777426174
+    created: 1686776882360
+    url: "{{ _.baseURL }}/transactions"
+    name: List transactions
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1685959396874
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d337a9e86e4b44858e7fd56eca2f9e56
+    parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
+    modified: 1686777436902
+    created: 1686777391522
+    url: "{{ _.baseURL }}/transactions/6eea6b83-851e-472f-b9d5-de2a6d8df37e"
+    name: List transaction by id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1685551552522.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_c54f6db37ce341e837be00cf8e2c212313d026b2
+    parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
+    modified: 1686775056720
+    created: 1686775056720
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1686775056720
+    _type: environment
+  - _id: jar_c54f6db37ce341e837be00cf8e2c212313d026b2
+    parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
+    modified: 1686775056721
+    created: 1686775056721
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_16a2f262fcd046b38723907e56f4a335
+    parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
+    modified: 1686775056717
+    created: 1686775056717
+    fileName: Ignite Node.js API REST -  Transactions
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_72944d27fc654d20b8fc5e852c82d83d
+    parentId: env_c54f6db37ce341e837be00cf8e2c212313d026b2
+    modified: 1686775210208
+    created: 1686775108501
+    name: dev
+    data:
+      baseURL: http://localhost:3333
+    dataPropertyOrder:
+      "&":
+        - baseURL
+    color: "#7d69cb"
+    isPrivate: false
+    metaSortKey: 1686775108501
+    _type: environment
