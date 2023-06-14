@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-14T22:02:38.969Z
+__export_date: 2023-06-14T22:39:52.082Z
 __export_source: insomnia.desktop.app:v2023.2.2
 resources:
   - _id: req_31684bf0613e4f99aabbcb3e60b12c31
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
-    modified: 1686779315666
+    modified: 1686781518126
     created: 1686775094705
     url: "{{ _.baseURL }}/"
     name: Create transaction
@@ -15,9 +15,9 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"title": "Freelancer",
-        	"amount": 8000,
-        	"type": "credit"
+        	"title": "Hamburguer mais caro do mundo!",
+        	"amount": 4000,
+        	"type": "debit"
         }
     parameters: []
     headers:
@@ -117,19 +117,19 @@ resources:
     _type: environment
   - _id: jar_c54f6db37ce341e837be00cf8e2c212313d026b2
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
-    modified: 1686779762661
+    modified: 1686781162344
     created: 1686775056721
     name: Default Jar
     cookies:
       - key: sessionId
-        value: 9df1ed6c-d1d2-4091-a77d-644fd67bda22
+        value: 4e4177a7-9170-4ffe-aea2-fe9214598f6b
         maxAge: 604800000
         domain: localhost
         path: /
         hostOnly: true
-        creation: 2023-06-14T21:56:02.661Z
-        lastAccessed: 2023-06-14T21:56:02.661Z
-        id: "6901739795000776"
+        creation: 2023-06-14T22:19:22.344Z
+        lastAccessed: 2023-06-14T22:19:22.344Z
+        id: "265997859520694"
     _type: cookie_jar
   - _id: spc_16a2f262fcd046b38723907e56f4a335
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
