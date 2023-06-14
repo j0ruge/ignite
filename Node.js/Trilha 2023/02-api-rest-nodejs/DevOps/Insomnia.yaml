@@ -1,13 +1,13 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-14T21:31:36.506Z
+__export_date: 2023-06-14T22:02:38.969Z
 __export_source: insomnia.desktop.app:v2023.2.2
 resources:
   - _id: req_31684bf0613e4f99aabbcb3e60b12c31
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
-    modified: 1686775497872
+    modified: 1686779315666
     created: 1686775094705
-    url: "{{ _.baseURL }}/transactions"
+    url: "{{ _.baseURL }}/"
     name: Create transaction
     description: ""
     method: POST
@@ -85,9 +85,9 @@ resources:
     _type: request
   - _id: req_d337a9e86e4b44858e7fd56eca2f9e56
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
-    modified: 1686777436902
+    modified: 1686779488597
     created: 1686777391522
-    url: "{{ _.baseURL }}/transactions/6eea6b83-851e-472f-b9d5-de2a6d8df37e"
+    url: "{{ _.baseURL }}/6eea6b83-851e-472f-b9d5-de2a6d8df37e"
     name: List transaction by id
     description: ""
     method: GET
@@ -117,10 +117,19 @@ resources:
     _type: environment
   - _id: jar_c54f6db37ce341e837be00cf8e2c212313d026b2
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
-    modified: 1686775056721
+    modified: 1686779762661
     created: 1686775056721
     name: Default Jar
-    cookies: []
+    cookies:
+      - key: sessionId
+        value: 9df1ed6c-d1d2-4091-a77d-644fd67bda22
+        maxAge: 604800000
+        domain: localhost
+        path: /
+        hostOnly: true
+        creation: 2023-06-14T21:56:02.661Z
+        lastAccessed: 2023-06-14T21:56:02.661Z
+        id: "6901739795000776"
     _type: cookie_jar
   - _id: spc_16a2f262fcd046b38723907e56f4a335
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
