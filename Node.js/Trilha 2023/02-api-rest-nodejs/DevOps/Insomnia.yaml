@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-14T22:39:52.082Z
+__export_date: 2023-06-15T21:53:38.386Z
 __export_source: insomnia.desktop.app:v2023.2.2
 resources:
   - _id: req_31684bf0613e4f99aabbcb3e60b12c31
@@ -85,9 +85,9 @@ resources:
     _type: request
   - _id: req_d337a9e86e4b44858e7fd56eca2f9e56
     parentId: wrk_3fe4d523ceb048e5a93d59145a58fead
-    modified: 1686779488597
+    modified: 1686858684713
     created: 1686777391522
-    url: "{{ _.baseURL }}/6eea6b83-851e-472f-b9d5-de2a6d8df37e"
+    url: "{{ _.baseURL }}/564b7852-934f-4c23-99af-b5ceec0b06e6"
     name: List transaction by id
     description: ""
     method: GET
@@ -141,7 +141,7 @@ resources:
     _type: api_spec
   - _id: env_72944d27fc654d20b8fc5e852c82d83d
     parentId: env_c54f6db37ce341e837be00cf8e2c212313d026b2
-    modified: 1686778056925
+    modified: 1686865790084
     created: 1686775108501
     name: dev
     data:
@@ -152,4 +152,18 @@ resources:
     color: "#7d69cb"
     isPrivate: false
     metaSortKey: 1686775108501
+    _type: environment
+  - _id: env_935613dbd7e647a48f0d723b5d42997f
+    parentId: env_c54f6db37ce341e837be00cf8e2c212313d026b2
+    modified: 1686865774491
+    created: 1686865726206
+    name: prod
+    data:
+      baseURL: https://ignite-nodejs-02-api-znq9.onrender.com/transactions
+    dataPropertyOrder:
+      "&":
+        - baseURL
+    color: "#06f44d"
+    isPrivate: false
+    metaSortKey: 1686865726206
     _type: environment
