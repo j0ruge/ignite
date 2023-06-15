@@ -5,6 +5,7 @@ import { randomUUID } from 'crypto'
 import { checkSessionIdExists } from '../middlewares/check-session-id-exists'
 
 export async function transactionsRoutes(app: FastifyInstance) {
+  // app.addHook('preHandler', checkSessionIdExists)
   app.get(
     '/',
     {
@@ -59,41 +60,35 @@ export async function transactionsRoutes(app: FastifyInstance) {
     },
   )
 
-  app.post(
-    '/',
-    {
-      preHandler: [checkSessionIdExists],
-    },
-    async (request, reply) => {
-      const createTransactionBodySchema = z.object({
-        title: z.string(),
-        amount: z.number(),
-        type: z.enum(['credit', 'debit']),
+  app.post('/', async (request, reply) => {
+    const createTransactionBodySchema = z.object({
+      title: z.string(),
+      amount: z.number(),
+      type: z.enum(['credit', 'debit']),
+    })
+
+    const { title, amount, type } = createTransactionBodySchema.parse(
+      request.body,
+    )
+
+    let sessionId = request.cookies.sessionId
+
+    if (!sessionId) {
+      const sevenDays = 1000 * 60 * 60 * 24 * 7
+      sessionId = randomUUID()
+      reply.setCookie('sessionId', sessionId, {
+        path: '/',
+        maxAge: sevenDays,
       })
+    }
 
-      const { title, amount, type } = createTransactionBodySchema.parse(
-        request.body,
-      )
+    await knex('transactions').insert({
+      id: randomUUID(),
+      title,
+      amount: type === 'credit' ? amount : amount * -1,
+      session_id: sessionId,
+    })
 
-      let sessionId = request.cookies.sessionId
-
-      if (!sessionId) {
-        const sevenDays = 1000 * 60 * 60 * 24 * 7
-        sessionId = randomUUID()
-        reply.setCookie('sessionId', sessionId, {
-          path: '/',
-          maxAge: sevenDays,
-        })
-      }
-
-      await knex('transactions').insert({
-        id: randomUUID(),
-        title,
-        amount: type === 'credit' ? amount : amount * -1,
-        session_id: sessionId,
-      })
-
-      return reply.status(201).send()
-    },
-  )
+    return reply.status(201).send()
+  })
 }
