@@ -2,20 +2,43 @@ import { FastifyInstance } from 'fastify'
 import { knex } from '../database'
 import { z } from 'zod'
 import { randomUUID } from 'crypto'
-// import { checkSessionIdExists } from '../middleware/check-session-id-exists'
+import { checkSessionIdExists } from '../middleware/check-session-id-exists'
 
 export async function usersRoutes(app: FastifyInstance) {
-  app.get('/', async (request, reply) => {
-    const users = await knex('users').select()
-    return { users }
-  })
+  // app.addHook('preHandler', checkSessionIdExists)
+  app.get(
+    '/',
+    {
+      preHandler: [checkSessionIdExists],
+    },
+    async (request) => {
+      const { sessionId } = request.cookies
 
-  app.get('/:id', async (request, reply) => {
-    const { id } = z.object({ id: z.string().uuid() }).parse(request.params)
-    const user = await knex('users').where({ id }).first()
+      console.log('sessionId', sessionId)
+      const users = await knex('users').where('session_id', sessionId).select()
+      return { users }
+    },
+  )
 
-    return user || reply.status(404).send({ error: 'Invalid ID' })
-  })
+  app.get(
+    '/:id',
+    {
+      preHandler: [checkSessionIdExists],
+    },
+    async (request, reply) => {
+      const { id } = z.object({ id: z.string().uuid() }).parse(request.params)
+      const { sessionId } = request.cookies
+
+      const user = await knex('users')
+        .where({
+          session_id: sessionId,
+          id,
+        })
+        .first()
+
+      return user || reply.status(404).send({ error: 'Invalid ID' })
+    },
+  )
 
   app.post('/', async (request, reply) => {
     const { name, email, password } = z
@@ -26,9 +49,25 @@ export async function usersRoutes(app: FastifyInstance) {
       })
       .parse(request.body)
 
+    let sessionId = request.cookies.sessionId
+
+    if (!sessionId) {
+      const sevenDays = 7 * 24 * 60 * 60 * 1000
+      sessionId = randomUUID()
+      reply.setCookie('sessionId', sessionId, {
+        path: '/',
+        maxAge: sevenDays,
+      })
+    }
+
+    console.log(sessionId)
+
+    console.log('sessionId', sessionId)
+
     const user = await knex('users')
       .insert({
         id: randomUUID(),
+        session_id: sessionId,
         name,
         email,
         password,
@@ -38,15 +77,21 @@ export async function usersRoutes(app: FastifyInstance) {
     return { user }
   })
 
-  app.delete('/:id', async (request, reply) => {
-    const { id } = z.object({ id: z.string().uuid() }).parse(request.params)
+  app.delete(
+    '/:id',
+    {
+      preHandler: [checkSessionIdExists],
+    },
+    async (request, reply) => {
+      const { id } = z.object({ id: z.string().uuid() }).parse(request.params)
 
-    const user = await knex('users').where({ id }).delete().returning('*')
+      const user = await knex('users').where({ id }).delete().returning('*')
 
-    if (!user) {
-      return reply.status(404).send({ error: 'Invalid ID' })
-    } else {
-      return reply.status(204).send()
-    }
-  })
+      if (!user) {
+        return reply.status(404).send({ error: 'Invalid ID' })
+      } else {
+        return reply.status(204).send()
+      }
+    },
+  )
 }
