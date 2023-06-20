@@ -1,11 +1,59 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-20T18:48:46.685Z
+__export_date: 2023-06-20T22:14:52.559Z
 __export_source: insomnia.desktop.app:v2023.2.2
 resources:
+  - _id: req_45c27cf444aa48bc8bccb8b99478cf45
+    parentId: fld_728abcc6b94a4a58ae61ff6691b29ae0
+    modified: 1687294423013
+    created: 1685143708171
+    url: http://localhost:3333/transactions
+    name: Create Transaction
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"title": "GabirU Perneta",
+        	"type": "credit",
+        	"amount": 2000
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1685143708171
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_728abcc6b94a4a58ae61ff6691b29ae0
+    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
+    modified: 1687294121618
+    created: 1687294121618
+    name: 02-api-rest-nodejs
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1687294121618
+    _type: request_group
+  - _id: wrk_9150b04e7c4e4f4b9503656693498d83
+    parentId: null
+    modified: 1686955865383
+    created: 1685143702090
+    name: Ignite Node.js
+    description: ""
+    scope: collection
+    _type: workspace
   - _id: req_ca9c3e0e5a274e4190cb187cf7033d50
     parentId: fld_62c681bf4e1941bca179951511e9a48e
-    modified: 1686956032474
+    modified: 1687289625088
     created: 1686955913529
     url: http://localhost:3333/users
     name: List Users
@@ -13,7 +61,11 @@ resources:
     method: GET
     body: {}
     parameters: []
-    headers: []
+    headers:
+      - id: pair_2350dfc5dfd646c4a9b7328e9f2efafd
+        name: ""
+        value: ""
+        description: ""
     authentication: {}
     metaSortKey: -1686955913529
     isPrivate: false
@@ -34,14 +86,6 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1686955889450
     _type: request_group
-  - _id: wrk_9150b04e7c4e4f4b9503656693498d83
-    parentId: null
-    modified: 1686955865383
-    created: 1685143702090
-    name: Ignite Node.js
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_49b8431da29940fdb191463442376986
     parentId: fld_62c681bf4e1941bca179951511e9a48e
     modified: 1686955964262
@@ -74,9 +118,9 @@ resources:
     _type: request
   - _id: req_fe5cb93483ee42edb83f9ee38b71cd5f
     parentId: fld_62c681bf4e1941bca179951511e9a48e
-    modified: 1686957870664
+    modified: 1687296628329
     created: 1686957404890
-    url: http://localhost:3333/users/cde7a033-24b7-4ffa-9043-ee54e46b7678
+    url: http://localhost:3333/users/b2cef85d-e937-480f-b2c6-21eba1262662
     name: Delete User
     description: ""
     method: DELETE
@@ -95,9 +139,9 @@ resources:
     _type: request
   - _id: req_3f40d22adcc1441bbe65b8d20ac562d8
     parentId: fld_62c681bf4e1941bca179951511e9a48e
-    modified: 1686958096566
+    modified: 1687288944327
     created: 1686958058882
-    url: http://localhost:3333/users/9848612f-a390-44c9-880c-43301f2d5eed
+    url: http://localhost:3333/users/1e3471b5-7898-4a05-b569-b34240934bfb
     name: Get User
     description: ""
     method: GET
@@ -168,9 +212,9 @@ resources:
     _type: request
   - _id: req_01a916178c174efd9b753575c4c7caf6
     parentId: fld_b55fde46a0d743f0b94c9483271f92e4
-    modified: 1687286339950
+    modified: 1687294221559
     created: 1685479718106
-    url: http://localhost:3333/tasks
+    url: "{{ _.base_url }}/tasks"
     name: Create Task
     description: ""
     method: POST
@@ -358,35 +402,6 @@ resources:
     headers: []
     authentication: {}
     metaSortKey: -1684809061868.6875
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_45c27cf444aa48bc8bccb8b99478cf45
-    parentId: wrk_9150b04e7c4e4f4b9503656693498d83
-    modified: 1685470482229
-    created: 1685143708171
-    url: http://localhost:3333/users
-    name: Create User
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {		
-        	"name": "GabirU Perneta",
-        	"email": "gabiru@gmail.com"
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-    authentication: {}
-    metaSortKey: -1685143708171
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -630,10 +645,20 @@ resources:
     _type: environment
   - _id: jar_cc677173210abc391add9b1996c7cfc558cc440f
     parentId: wrk_9150b04e7c4e4f4b9503656693498d83
-    modified: 1685143702099
+    modified: 1687296471275
     created: 1685143702099
     name: Default Jar
-    cookies: []
+    cookies:
+      - key: sessionId
+        value: e9ae0685-7e28-496b-a599-2efd9826e243
+        maxAge: 604800000
+        domain: localhost
+        path: /
+        hostOnly: true
+        creation: 2023-06-20T20:53:45.610Z
+        lastAccessed: 2023-06-20T20:53:45.610Z
+        id: "20717210302556643"
+        expires: null
     _type: cookie_jar
   - _id: spc_1f2b6f9c693447738132018bdd9687a0
     parentId: wrk_9150b04e7c4e4f4b9503656693498d83
@@ -643,3 +668,17 @@ resources:
     contents: ""
     contentType: yaml
     _type: api_spec
+  - _id: env_96e899662f564e5dbd7b8922ada61a57
+    parentId: env_cc677173210abc391add9b1996c7cfc558cc440f
+    modified: 1687294214306
+    created: 1687294170002
+    name: dev
+    data:
+      base_url: http://localhost:3333
+    dataPropertyOrder:
+      "&":
+        - base_url
+    color: "#b80adb"
+    isPrivate: false
+    metaSortKey: 1687294170002
+    _type: environment
