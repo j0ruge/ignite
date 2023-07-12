@@ -3,7 +3,7 @@ import { env } from './env'
 
 app
   .listen({
-    host: env.DATABASE_URL,
+    host: env.APP_HOST,
     port: env.PORT,
   })
   .then(() => console.log('🚀 HTTP Server is running!'))
