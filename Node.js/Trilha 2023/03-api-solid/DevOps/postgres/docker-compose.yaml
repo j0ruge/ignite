@@ -4,9 +4,9 @@ services:
   api-solid-pg:
     image: bitnami/postgresql
     container_name: api-solid-pg
-    restart: unless-stopped
+    restart: always
     ports:
-      - 5432:5432
+      - 15432:5432
     environment:
       - POSTGRESQL_USERNAME=docker
       - POSTGRESQL_PASSWORD=docker
