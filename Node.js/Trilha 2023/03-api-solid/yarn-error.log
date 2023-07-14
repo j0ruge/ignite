@@ -2,7 +2,7 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add -D @vitest/coverage-v8
 
 PATH: 
-  C:\Users\JORGE~1.FER\AppData\Local\Temp\yarn--1689344764944-0.8053111043904448;C:\Users\jorge.ferrari\Downloads\repos\ignite\Node.js\Trilha 2023\03-api-solid\node_modules\.bin;C:\Users\jorge.ferrari\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files\PowerShell\7;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Program Files\Microsoft\jdk-11.0.17.8-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Bitvise SSH Client;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\SqlCmd\Tools\;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\jorge.ferrari\.cargo\bin;C:\Users\jorge.ferrari\AppData\Local\Microsoft\WindowsApps;C:\Users\jorge.ferrari\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jorge.ferrari\.dotnet\tools;C:\Users\jorge.ferrari\AppData\Local\Yarn\bin;C:\Users\jorge.ferrari\AppData\Roaming\npm;C:\Users\jorge.ferrari\AppData\Local\Programs\Git LFS;C:\Users\jorge.ferrari\AppData\Local\Programs\Git\cmd
+  C:\Users\JORGE~1.FER\AppData\Local\Temp\yarn--1689346733602-0.13363244606483637;C:\Users\jorge.ferrari\Downloads\repos\ignite\Node.js\Trilha 2023\03-api-solid\node_modules\.bin;C:\Users\jorge.ferrari\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files\PowerShell\7;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Program Files\Microsoft\jdk-11.0.17.8-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Bitvise SSH Client;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\SqlCmd\Tools\;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\jorge.ferrari\.cargo\bin;C:\Users\jorge.ferrari\AppData\Local\Microsoft\WindowsApps;C:\Users\jorge.ferrari\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jorge.ferrari\.dotnet\tools;C:\Users\jorge.ferrari\AppData\Local\Yarn\bin;C:\Users\jorge.ferrari\AppData\Roaming\npm;C:\Users\jorge.ferrari\AppData\Local\Programs\Git LFS;C:\Users\jorge.ferrari\AppData\Local\Programs\Git\cmd
 
 Yarn version: 
   1.22.19
@@ -29,7 +29,8 @@ npm manifest:
       "lint": "eslint src/ --ext .ts --fix",
       "test": "vitest run",
       "test:watch": "vitest --watch",
-      "test:coverage": "vitest --coverage"
+      "test:coverage": "vitest --coverage",
+      "test:ui": "vitest run --ui"
     },
     "keywords": [],
     "author": "",
@@ -37,6 +38,7 @@ npm manifest:
     "devDependencies": {
       "@rocketseat/eslint-config": "1.2.0",
       "@types/node": "20.4.0",
+      "@vitest/ui": "0.33.0",
       "eslint": "8.44.0",
       "prisma": "4.10.1",
       "tsup": "6.6.3",
@@ -251,6 +253,11 @@ Lockfile:
       "@nodelib/fs.scandir" "2.1.5"
       fastq "^1.6.0"
   
+  "@polka/url@^1.0.0-next.20":
+    version "1.0.0-next.21"
+    resolved "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.21.tgz"
+    integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
+  
   "@prisma/client@4.10.1":
     version "4.10.1"
     resolved "https://registry.npmjs.org/@prisma/client/-/client-4.10.1.tgz"
@@ -446,6 +453,19 @@ Lockfile:
     integrity sha512-Kv+yZ4hnH1WdiAkPUQTpRxW8kGtH8VRTnus7ZTGovFYM1ZezJpvGtb9nPIjPnptHbsyIAxYZsEpVPYgtpjGnrg==
     dependencies:
       tinyspy "^2.1.1"
+  
+  "@vitest/ui@*", "@vitest/ui@0.33.0":
+    version "0.33.0"
+    resolved "https://registry.npmjs.org/@vitest/ui/-/ui-0.33.0.tgz"
+    integrity sha512-7gbAjLqt30R4bodkJAutdpy4ncv+u5IKTHYTow1c2q+FOxZUC9cKOSqMUxjwaaTwLN+EnDnmXYPtg3CoahaUzQ==
+    dependencies:
+      "@vitest/utils" "0.33.0"
+      fast-glob "^3.3.0"
+      fflate "^0.8.0"
+      flatted "^3.2.7"
+      pathe "^1.1.1"
+      picocolors "^1.0.0"
+      sirv "^2.0.3"
   
   "@vitest/utils@0.33.0":
     version "0.33.0"
@@ -1328,7 +1348,7 @@ Lockfile:
     resolved "https://registry.npmjs.org/fast-diff/-/fast-diff-1.3.0.tgz"
     integrity sha512-VxPP4NqbUjj6MaAOafWeUn2cXWLcCtljklUtZf0Ind4XQ+QPtmA0b18zZy0jIQx+ExRVCR/ZQpBmik5lXshNsw==
   
-  fast-glob@^3.2.9:
+  fast-glob@^3.2.9, fast-glob@^3.3.0:
     version "3.3.0"
     resolved "https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.0.tgz"
     integrity sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==
@@ -1406,6 +1426,11 @@ Lockfile:
     dependencies:
       reusify "^1.0.4"
   
+  fflate@^0.8.0:
+    version "0.8.0"
+    resolved "https://registry.npmjs.org/fflate/-/fflate-0.8.0.tgz"
+    integrity sha512-FAdS4qMuFjsJj6XHbBaZeXOgaypXp8iw/Tpyuq/w3XA41jjLHT8NPA+n7czH/DDhdncq0nAyDZmPeWXh2qmdIg==
+  
   file-entry-cache@^6.0.1:
     version "6.0.1"
     resolved "https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz"
@@ -1445,7 +1470,7 @@ Lockfile:
       flatted "^3.1.0"
       rimraf "^3.0.2"
   
-  flatted@^3.1.0:
+  flatted@^3.1.0, flatted@^3.2.7:
     version "3.2.7"
     resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.7.tgz"
     integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
@@ -2033,6 +2058,11 @@ Lockfile:
       pkg-types "^1.0.3"
       ufo "^1.1.2"
   
+  mrmime@^1.0.0:
+    version "1.0.1"
+    resolved "https://registry.npmjs.org/mrmime/-/mrmime-1.0.1.tgz"
+    integrity sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==
+  
   ms@^2.1.1:
     version "2.1.3"
     resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
@@ -2584,6 +2614,15 @@ Lockfile:
     resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
     integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
   
+  sirv@^2.0.3:
+    version "2.0.3"
+    resolved "https://registry.npmjs.org/sirv/-/sirv-2.0.3.tgz"
+    integrity sha512-O9jm9BsID1P+0HOi81VpXPoDxYP374pkOLzACAoyUQ/3OUVndNpsz6wMnY2z+yOxzbllCKZrM+9QrWsv4THnyA==
+    dependencies:
+      "@polka/url" "^1.0.0-next.20"
+      mrmime "^1.0.0"
+      totalist "^3.0.0"
+  
   slash@^3.0.0:
     version "3.0.0"
     resolved "https://registry.npmjs.org/slash/-/slash-3.0.0.tgz"
@@ -2791,6 +2830,11 @@ Lockfile:
     dependencies:
       is-number "^7.0.0"
   
+  totalist@^3.0.0:
+    version "3.0.1"
+    resolved "https://registry.npmjs.org/totalist/-/totalist-3.0.1.tgz"
+    integrity sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==
+  
   tr46@^1.0.1:
     version "1.0.1"
     resolved "https://registry.npmjs.org/tr46/-/tr46-1.0.1.tgz"
@@ -2951,7 +2995,7 @@ Lockfile:
     optionalDependencies:
       fsevents "~2.3.2"
   
-  vitest@0.33.0:
+  "vitest@>=0.30.1 <1", vitest@0.33.0:
     version "0.33.0"
     resolved "https://registry.npmjs.org/vitest/-/vitest-0.33.0.tgz"
     integrity sha512-1CxaugJ50xskkQ0e969R/hW47za4YXDUfWJDxip1hwbnhUjYolpfUn2AMOulqG/Dtd9WYAtkHmM/m3yKVrEejQ==
