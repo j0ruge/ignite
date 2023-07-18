@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2023-07-12T20:34:51.655Z
-__export_source: insomnia.desktop.app:v2023.3.0
+__export_date: 2023-07-18T22:12:55.335Z
+__export_source: insomnia.desktop.app:v2023.4.0
 resources:
   - _id: req_cc35ed060f3546f7b890a5b6c2e4e490
     parentId: fld_5769db71eb574c118e63125698196137
-    modified: 1689193984022
+    modified: 1689283461207
     created: 1689181762717
     url: http://localhost:3333/users
     name: Create User
@@ -15,8 +15,8 @@ resources:
       mimeType: application/json
       text: |-
         {		
-        	"name": "GabirU Noiado",
-        	"email": "gabiru_noiado@gmail.com",
+        	"name": "GabirU Felpudo",
+        	"email": "gabiru_felpudo@gmail.com",
         	"password": "GabirU1"
         }
     parameters: []
@@ -51,6 +51,35 @@ resources:
     description: ""
     scope: collection
     _type: workspace
+  - _id: req_db81205a230246188a42c1f9788c1769
+    parentId: fld_5769db71eb574c118e63125698196137
+    modified: 1689718329676
+    created: 1689718223705
+    url: http://localhost:3333/sessions
+    name: Authenticate
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {		
+        	"email": "gabiru_felpudo@gmail.com",
+        	"password": "GabirU1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1687596924519.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_45c27cf444aa48bc8bccb8b99478cf45
     parentId: fld_728abcc6b94a4a58ae61ff6691b29ae0
     modified: 1687294423013

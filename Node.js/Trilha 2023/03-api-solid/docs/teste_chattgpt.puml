@@ -1,0 +1,37 @@
+@startuml
+
+interface UsersRepository {
+  +findByEmail(email: string): User
+  +create(user: User): User
+}
+
+class RegisterUseCasesRequest {
+  +name: string
+  +email: string
+  +password: string
+}
+
+class RegisterUseCasesResponse {
+  +user: User
+}
+
+class User {
+  +name: string
+  +email: string
+  +password_hash: string
+}
+
+class UserAlreadyExistsError
+
+class RegisterUseCase {
+  -usersRepository: UsersRepository
+  +execute(request: RegisterUseCasesRequest): Promise<RegisterUseCasesResponse>
+}
+
+RegisterUseCase ..> UsersRepository
+RegisterUseCase --> User : creates
+RegisterUseCase ..> RegisterUseCasesRequest
+RegisterUseCase --> RegisterUseCasesResponse
+RegisterUseCase ..> UserAlreadyExistsError
+
+@enduml
